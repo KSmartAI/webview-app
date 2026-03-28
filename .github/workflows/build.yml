@@ -20,9 +20,11 @@ jobs:
           cd android
           chmod +x gradlew
           ./gradlew assembleDebug
+          # 알맹이 파일을 진짜 ksmartai.apk 이름으로 복사합니다.
+          cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/ksmartai.apk
           
       # 완성된 따끈따끈한 APK 업로드하기 (v4 최신 버전 적용)
       - uses: actions/upload-artifact@v4
         with:
           name: ksmartai.apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          path: android/app/build/outputs/apk/debug/ksmartai.apk
